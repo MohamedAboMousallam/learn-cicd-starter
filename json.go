@@ -5,7 +5,8 @@ import (
 	"log"
 	"net/http"
 )
-// I love these helper functions 
+
+// I love these helper functions
 func respondWithError(w http.ResponseWriter, code int, msg string) {
 	if code > 499 {
 		log.Printf("Responding with 5XX error: %s", msg)
