@@ -34,3 +34,6 @@ jobs:
 
       - name: Build and push Docker image
         run: gcloud builds submit --tag=europe-central2-docker.pkg.dev/hybrid-chariot-416117/notely-ar-repo/notely:latest .
+      
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image europe-central2-docker.pkg.dev/hybrid-chariot-416117/notely-ar-repo/notely:latest --region europe-central2 --allow-unauthenticated --project hybrid-chariot-416117 --max-instances=4
